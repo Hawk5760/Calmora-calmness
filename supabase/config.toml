@@ -1,0 +1,25 @@
+project_id = "zheocimlhamptjboqknt"
+
+[functions.puzzle-ai-analysis]
+verify_jwt = true
+
+[functions.gemini-chat]
+verify_jwt = false
+
+[functions.mood-detection]
+verify_jwt = false
+
+[functions.openai-mood]
+verify_jwt = false
+
+[functions.totp]
+verify_jwt = false
+
+[functions.journal-reflection]
+verify_jwt = false
+
+[functions.ai-support-diagnosis]
+verify_jwt = false
+
+[functions.ai-support-chat]
+verify_jwt = false

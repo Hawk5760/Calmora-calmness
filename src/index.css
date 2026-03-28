@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Calmora Professional Design System
+   Clean, realistic, and professional wellness theme
+   All colors in HSL for consistency
+*/
+
+@layer base {
+  :root {
+    /* Professional Color Palette - Light Mode */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 15%;
+    
+    /* Primary - Deep Teal (Professional, Calming) */
+    --primary: 175 60% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 175 55% 45%;
+    
+    /* Secondary - Warm Neutral */
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 20%;
+    
+    /* Accent - Soft Coral */
+    --accent: 15 60% 90%;
+    --accent-foreground: 15 50% 30%;
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 45%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 175 60% 35%;
+    
+    /* Destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(175 60% 35%), hsl(175 55% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%), hsl(220 15% 95%));
+    --gradient-warm: linear-gradient(135deg, hsl(15 60% 90%), hsl(30 50% 92%));
+    --gradient-hero: linear-gradient(180deg, 
+      transparent 0%, 
+      hsl(210 20% 98% / 0.3) 30%, 
+      hsl(210 20% 98% / 0.8) 70%, 
+      hsl(210 20% 98%) 100%);
+    
+    /* Legacy gradient names for compatibility */
+    --gradient-soul: var(--gradient-primary);
+    --gradient-calm: var(--gradient-subtle);
+    --gradient-forest: linear-gradient(135deg, hsl(175 60% 35%), hsl(160 50% 40%));
+    --gradient-twilight: linear-gradient(135deg, hsl(250 40% 55%), hsl(280 35% 50%));
+    
+    /* Shadows - Subtle and Professional */
+    --shadow-sm: 0 1px 2px hsl(220 25% 15% / 0.05);
+    --shadow-md: 0 4px 12px hsl(220 25% 15% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(220 25% 15% / 0.12);
+    --shadow-xl: 0 16px 48px hsl(220 25% 15% / 0.15);
+    
+    /* Legacy shadow names */
+    --shadow-soft: var(--shadow-md);
+    --shadow-glow: 0 0 20px hsl(175 60% 35% / 0.2);
+    --shadow-magical: var(--shadow-lg);
+    
+    /* Transitions */
+    --transition-fast: all 0.15s ease;
+    --transition-base: all 0.25s ease;
+    --transition-slow: all 0.4s ease;
+    
+    /* Legacy transition names */
+    --transition-gentle: var(--transition-base);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    --radius: 0.75rem;
+
+    /* Semantic Mood Colors */
+    --mood-happy: 142 60% 45%;
+    --mood-sad: 260 50% 55%;
+    --mood-anxious: 350 65% 55%;
+    --mood-calm: 200 60% 50%;
+    --mood-angry: 0 70% 50%;
+    --mood-motivated: 30 80% 50%;
+
+    /* Status Colors */
+    --status-success: 142 60% 45%;
+    --status-warning: 38 92% 50%;
+    --status-info: 200 60% 50%;
+
+    /* Feature Colors */
+    --feature-mood: 350 65% 55%;
+    --feature-journal: 200 60% 50%;
+    --feature-mindfulness: 160 55% 45%;
+    --feature-sleep: 240 50% 55%;
+    --feature-garden: 85 55% 45%;
+    --feature-chat: 270 50% 55%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 175 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 95%;
+    --sidebar-accent-foreground: 220 25% 20%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 175 60% 35%;
+  }
+
+  .dark {
+    /* Professional Dark Mode */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+    
+    --primary: 175 55% 50%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 175 60% 60%;
+    
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 90%;
+    
+    --accent: 15 50% 25%;
+    --accent-foreground: 15 40% 85%;
+    
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 20% 95%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 55%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 175 55% 50%;
+    
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 210 20% 95%;
+    
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(175 55% 40%), hsl(175 50% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 20% 12%));
+    --gradient-warm: linear-gradient(135deg, hsl(15 40% 20%), hsl(30 35% 22%));
+    --gradient-hero: linear-gradient(180deg, 
+      transparent 0%, 
+      hsl(220 25% 8% / 0.3) 30%, 
+      hsl(220 25% 8% / 0.8) 70%, 
+      hsl(220 25% 8%) 100%);
+    
+    --gradient-soul: var(--gradient-primary);
+    --gradient-calm: var(--gradient-subtle);
+    --gradient-forest: linear-gradient(135deg, hsl(175 50% 35%), hsl(160 45% 40%));
+    --gradient-twilight: linear-gradient(135deg, hsl(250 35% 40%), hsl(280 30% 35%));
+    
+    /* Dark shadows */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --shadow-xl: 0 16px 48px hsl(0 0% 0% / 0.5);
+    --shadow-soft: var(--shadow-md);
+    --shadow-glow: 0 0 25px hsl(175 55% 50% / 0.25);
+    --shadow-magical: var(--shadow-lg);
+
+    /* Semantic Mood Colors - Dark */
+    --mood-happy: 142 55% 55%;
+    --mood-sad: 260 45% 65%;
+    --mood-anxious: 350 60% 60%;
+    --mood-calm: 200 55% 55%;
+    --mood-angry: 0 65% 55%;
+    --mood-motivated: 30 75% 55%;
+
+    --status-success: 142 55% 55%;
+    --status-warning: 38 85% 55%;
+    --status-info: 200 55% 55%;
+
+    --feature-mood: 350 60% 60%;
+    --feature-journal: 200 55% 55%;
+    --feature-mindfulness: 160 50% 50%;
+    --feature-sleep: 240 45% 60%;
+    --feature-garden: 85 50% 50%;
+    --feature-chat: 270 45% 60%;
+
+    /* Sidebar dark */
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 175 55% 50%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 175 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve touch targets on mobile */
+  button, a, [role="button"] {
+    @apply touch-manipulation;
+  }
+
+  /* Better mobile form inputs */
+  input, textarea, select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+@layer utilities {
+  /* Gradient Utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Legacy gradient classes */
+  .gradient-soul {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-calm {
+    background: var(--gradient-subtle);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .gradient-forest {
+    background: var(--gradient-forest);
+  }
+  
+  .gradient-twilight {
+    background: var(--gradient-twilight);
+  }
+  
+  /* Text gradient */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-soul {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Shadow Utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-magical {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Transition Utilities */
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+  
+  .transition-base {
+    transition: var(--transition-base);
+  }
+  
+  .transition-gentle {
+    transition: var(--transition-base);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+  
+  .glass-subtle {
+    @apply bg-card/60 backdrop-blur-sm border border-border/30;
+  }
+}
+
+@layer components {
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  @keyframes grow {
+    0% { transform: scale(0.95) translateY(10px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  
+  @keyframes bloom {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .grow {
+    animation: grow 0.5s ease-out forwards;
+  }
+  
+  .bloom {
+    animation: bloom 0.4s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  /* Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
